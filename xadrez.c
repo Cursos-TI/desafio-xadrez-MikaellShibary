@@ -7,47 +7,67 @@
 int main()
 {
 
-    //Declaracao das pecas do xadres
-    int xadrez = 1; //Quando 0 endgame
-    int Bispo_1, Bispo_2, Torre_1, Torre_2, Rainha;
+    int xadrez = 1; // Controle do jogo (1 = em andamento, 0 = encerrado)
     int opcao;
-
-    /*while (xadrez)
-    {
-        printf("### Jogo de XADREZ ###\n");
-        printf("Escolha a opção conforme número da peça para movimenta-las\n");
+        while (xadrez){
+        printf("\n### Jogo de XADREZ ###\n");
+        printf("Escolha a opção conforme número da peça para movimentá-las:\n");
         printf("1 - Mover Bispo Branco\n");
         printf("2 - Mover Torre Branca\n");
-        printf("3 - Mover Rainha Branca\n");*/
+        printf("3 - Mover Rainha Branca\n");
+        printf("4 - Mover Cavalo Branco\n");
+        printf("5 - Finalizar Jogo\n");
+        printf("Opção: ");
         scanf("%d", &opcao);
 
-        switch (opcao)
-        {
-        case 1:
-                // Implementação de Movimentação do Bispo
-            for (Bispo_1 = 0; Bispo_1 < 5; Bispo_1++){
-            printf("Bispo Branco 1 movimentou-se para superior direita.\n");
-        break;
-        case 2:
-            // Implementação de Movimentação da Torre
-            for (Torre_1 = 0; Torre_1 < 6; Torre_1++){
-            printf("Torre Branca 1 movimentou-se para à cima.\n");
-        break;
-        case 3:
-            // Implementação de Movimentação da Rainha
-            for (Rainha = 0; Rainha < 8; Rainha++){
-            printf("Rainha Branca  movimentou-se para à esquerda.\n");
-        break;
-        case 4:
-            // Finalizar jogada
-            printf("Finalizando jogada...\n");
-            xadrez = 0;
-        break;
-        default:
-                printf("opção invalida\n");
+            switch (opcao){
+            case 1:
+                // Movimentação do Bispo
+                for (int i = 0; i < 5; i++){
+                printf("Bispo Branco se movimentou para a diagonal superior direita, (%d) casa.\n", i + 1);
+                }
             break;
+
+            case 2:
+                // Movimentação da Torre
+                for (int i = 0; i < 6; i++){
+                printf("Torre Branca se movimentou para cima, (%d) casa.\n", i + 1);
+                }
+            break;
+
+            case 3:
+                // Movimentação da Rainha
+                for (int i = 0; i < 8; i++){
+                printf("Rainha Branca se movimentou para a esquerda, (%d) casa.\n", i + 1);
+                }
+            break;
+
+            case 4:
+                // Movimentação do Cavalo
+                for (int i = 0; i < 1; i++){
+                    for (int i = 0; i < 2; i++)
+                    {
+                        printf("Cavalo Branco fez o movimento em 'L' para baixo, (%d) casa.\n");
+                    }
+                    
+                printf("Cavalo Branco fez movimento em 'L' para esquerda, (%d) casa.\n", i + 1);
+                }
+            break;
+
+            case 5:
+            // Encerrar o jogo
+            printf("Finalizando o jogo...\n");
+            xadrez = 0;
+            break;
+
+            default:
+            printf("Opção inválida. Tente novamente.\n");
+            break;
+            }
         }
 
+    return 0;
+}
     // Nível Aventureiro - Movimentação do Cavalo
     // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
     // Um loop pode representar a movimentação horizontal e outro vertical.
@@ -58,6 +78,3 @@ int main()
 
     // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
     // Inclua o uso de continue e break dentro dos loops.
-
-    return 0;
-}
