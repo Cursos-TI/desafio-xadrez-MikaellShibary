@@ -38,7 +38,7 @@ int main()
 {
 
     int xadrez = 1; // Controle do jogo (1 = em andamento, 0 = encerrado)
-    int opcao;
+    int opcao, casas;
         while (xadrez){
         printf("\n### Jogo de XADREZ ###\n");
         printf("Escolha a opção conforme número da peça para movimentá-las:\n");
@@ -53,7 +53,9 @@ int main()
             switch (opcao){
             case 1:
                 // Movimentação do Bispo
-                moverbispo(5);
+                printf("Quantas casas deseja mover a peça:");
+                scanf("%d",&casas);
+                moverbispo(casas);
                 /*for (int i = 0; i < 5; i++){
                 printf("Bispo Branco se movimentou para a diagonal superior direita, (%d) casa.\n", i + 1);
                 }*/
@@ -61,7 +63,9 @@ int main()
 
             case 2:
                 // Movimentação da Torre
-                movertorre(6);
+                printf("Quantas casas deseja mover a peça:");
+                scanf("%d",&casas);
+                movertorre(casas);
                 /*for (int i = 0; i < 6; i++){
                 printf("Torre Branca se movimentou para cima, (%d) casa.\n", i + 1);
                 }*/
@@ -69,7 +73,9 @@ int main()
 
             case 3:
                 // Movimentação da Rainha
-                moverrainha(8);
+                printf("Quantas casas deseja mover a peça:");
+                scanf("%d",&casas);
+                moverrainha(casas);
                 /*for (int i = 0; i < 8; i++){
                 printf("Rainha Branca se movimentou para a esquerda, (%d) casa.\n", i + 1);
                 }*/
